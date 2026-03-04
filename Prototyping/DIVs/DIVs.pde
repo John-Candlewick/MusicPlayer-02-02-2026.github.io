@@ -19,10 +19,18 @@ rect( DivX = 147.69, DivY = 90, DivWidth = 886.15, DivHeight = 147.69 ); //song 
 rect( DivX = 147.69, DivY = 237.69, DivWidth = 886.15, DivHeight = 147.69 ); // bar below song title
 rect( DivX = 147.69, DivY = 385.38, DivWidth = 295.38, DivHeight = 295.38 ); // artist pfp
 rect( DivX = 443.07, DivY = 385.38, DivWidth = 590.76, DivHeight = 147.69 ); // artist desc
-rect( DivX = 443.07, DivY = 533.07, DivWidth = 590.76, DivHeight = 147.69 ); // more artist desc
+rect( DivX = 443.07, DivY = 533.07, DivWidth = 590.76, DivHeight = 147.69 ); // more artist desc?
 rect( DivX = 1181.53, DivY = 90, DivWidth = 590.76, DivHeight = 590.76 ); // song image
-rect( DivX = 976.14, DivY = 147.69, DivWidth = 147.69, DivHeight = 147.69 ); 
-rect( DivX, DivY, DivWidth, DivHeight );
-rect( DivX, DivY, DivWidth, DivHeight );
-rect( DivX, DivY, DivWidth, DivHeight );
-rect( DivX, DivY, DivWidth, DivHeight );
+// the buttons (figure out which are which)
+rect( DivX = 147.69, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #1
+rect( DivX = 295.38, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #2
+rect( DivX = 443.07, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #3
+rect( DivX = 590.76, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #4
+rect( DivX = 738.45, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #5
+rect( DivX = 886.14, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #6
+rect( DivX = 1033.83, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #7
+rect( DivX = 1181.52, DivY = 773.45, DivWidth = 147.69, DivHeight = 1920/13 ); // button #8
+rect( DivX = 1329.21, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #9
+rect( DivX = 1476.9, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #10
+rect( DivX = 1624.59, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #11
+// the small buttons at the top corners?
