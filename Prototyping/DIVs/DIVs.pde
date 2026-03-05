@@ -34,3 +34,11 @@ rect( DivX = 1329.21, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); //
 rect( DivX = 1476.9, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #10
 rect( DivX = 1624.59, DivY = 773.45, DivWidth = 147.69, DivHeight = 147.69 ); // button #11
 // the small buttons at the top corners?
+rect ( DivX = 1870, DivY = 0, DivWidth = 50, DivHeight = 50);
+// progress bar
+rect ( DivX = 147.69, DivY = 980, DivWidth = 1624.59, DivHeight = 15);
+// times at ends of progress bar
+rect ( DivX = 27.69, DivY = 952, DivWidth = 110, DivHeight = 70);
+rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70);
+
+//button symbols
