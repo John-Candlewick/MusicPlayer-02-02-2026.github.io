@@ -42,3 +42,5 @@ rect ( DivX = 27.69, DivY = 952, DivWidth = 110, DivHeight = 70);
 rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70);
 
 //button symbols
+//triangle ();
+//for shapes make library?
