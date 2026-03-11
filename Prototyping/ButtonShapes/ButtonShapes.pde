@@ -1,18 +1,21 @@
 
-// Triangle/Play Button
-size(100, 100);
-triangle(x1, y1, x2, y2, x3, y3);
-float
-float
-float
-float
-float
-float
+size(1000, 700);
 
-//Square/Stop Button
+//Triangle Section
+//Play Button
+triangle(120, 300, 120, 80, 315, 190);
+// Skip  Button
+triangle (500, 500, 500, 600, 560, 550);
+triangle (560, 500, 560, 600, 620, 550);
+
+//Square Section
+//Stop Button
+square(50, 400, 200);
 
 //Lines (for whatever needs it)
+line(700, 80, 700, 300);
 
-//Rectangles for pause button and whatever else
- 
-//
+//Rectangle Section
+//Pause Button
+rect(400, 80, 60, 200);
+rect(500, 80, 60, 200);
