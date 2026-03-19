@@ -3,46 +3,56 @@
 //
 //Display
 fullScreen();
+int appWidth = displayWidth;
+int appHeight = displayHeight;
 //
-String upArow = "..";
+String upArrow = "..";
 String dependanciesFolder = "Dependencies";
 String imagesFolder = "Images";
 String imageName1 = "250px-CD_autolev_crop_new.jpg";
-String imageName2 = "";
+String imageName2 = "CDP101a.jpg";
 String imageName3 = "Funky_Stuff_mixtape.jpg";
-String fileExension = ".jpg";
+String fileExtension = ".jpg";
 String open = "/";
 //
 //Concatenation
 //Note, Cut Out, See Absolute Pathway:
 //See Relative Pathway: Dependencies\Images
-String imageDirectory = upArow + open + upArow + open + dependanciesFolder + open + imagesFolder + open;
-String pathway1 = imageDirectory + imageName1 + fileExension;
-String pathway2 = imageDirectory + imageName2 + fileExension;
-String pathway3 = imageDirectory + imageName3 + fileExension;
+String imageDirectory = upArrow + open + upArrow + open + dependanciesFolder + open + imagesFolder + open; //subject to change? change according to needs.
+String pathway1 = imageDirectory + imageName1 + fileExtension;
+String pathway2 = imageDirectory + imageName2 + fileExtension;
+String pathway3 = imageDirectory + imageName3 + fileExtension;
 //println(pathway);
 //
 PImage image1 = loadImage( pathway1 );
+int imageWidth1 = 250;
+int imageHeight = 250;
 PImage image2 = loadImage( pathway2 );
-int imageWidth2 = ;
-int imageHeight2 = ;
+int imageWidth2 = 250;
+int imageHeight2 = 124;
 PImage image3 = loadImage( pathway3 );
+int imageWidth3 = 250;
+int imageHeight3 = 166;
 //
 //Population: DIVs
 int numberOfButton = 13; //Imaginary buttons on each side
-int widthOfButton = appWidth/numberOfButtons;
-int beginningButttonSpace = WidthOfButton;
+int widthOfButton = appWidth/numberOfButton;
+int beginningButtonSpace = widthOfButton;
 float imageDivX = beginningButtonSpace;
 float imageDivY = appHeight*4.5/20;
 float imageDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
 float imageDivHeight = appHeight*1.5/5; //1+1.5=2.5, half of the total height
 
 //Image: Aspect Ratio Aglorithm
-//Ternary operator for aspect ratio
-
-
-
+//println( float(imageWidth2)/ float(imageHeight2) );
+//Ternary operator for aspect ratio: Q: greatone v lessone
+float image2AspectRatio_GreatOne = ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2) ;
+println(image2AspectRatio_GreatOne);
+float imageWidthAdjusted2 = imageDivWidth;
+float imageHeightAdjusted2 = ( imageWidth >= imageDivWidth ) ? imageWidthAdjusted2 * image2AspectRatio_GreatOne : imageWidthAdjusted
+//
 //DIV: Image
 rect(imageDivX, imageDivY, imageDivWidth, imageDivHeight);
 //
-image(image1 0, 0);
+//image(image1, 0, 0);
+image(image2, imageDivX, imageDivY, imageWidthAdjusted2, imageDivHeight);
