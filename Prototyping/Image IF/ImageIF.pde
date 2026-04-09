@@ -44,17 +44,35 @@ float imageDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
 float imageDivHeight = appHeight*1.5/5; //1+1.5=2.5, half of the total height
 
 //Image: Aspect Ratio Aglorithm
+float image2AspectRatio_GreatOne = ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2) ;
+float imageWidthAdjusted2 = imageDivWidth;
+float imageWidthAdjusted1;
+if ( imageWidth2 >= imageDivWidth ) {
+  imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRatio_GreatOne;
+  while ( imageHeightAdjusted1 > imageDivHeight ) {
+    imageWidthAdjusted2 *= 0.99;
+    imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRatio_GreatOne ; //CHANGE THIS?
+  }//END WHILE
+} else {
+  imageHeightAdjusted1 = imageWidthAdjusted2 * image2AspectRatio_GreatOne;
+  while ( imageHeightAdjusted1 > imageDivHeight ) {
+    imageWidthAdjusted2 *= 0.99;
+    imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRatio_GreatOne ; //CHANGE THIS?
+  }//END WHILE
+}
+
+
 //println( float(imageWidth2)/ float(imageHeight2) );
 //Ternary operator for aspect ratio: Q: greatone v lessone
-float image2AspectRatio_GreatOne = ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2) ;
+
 println("Verify image aspect ratio greater than one.", image2AspectRatio_GreatOne>=1, "\tActual Number:", image2AspectRatio_GreatOne);
-float imageWidthAdjusted2 = imageDivWidth;
+
 println("Comparison pf imageHeight2 and divHeight.", imageHeight2, imageDivHeight);
-float imageHeightAdjusted1 = ( imageWidth2 >= imageDivWidth ) ? imageWidthAdjusted2 * image2AspectRatio_GreatOne : imageWidthAdjusted2 * image2AspectRatio_GreatOne ;
+
 println("imageHeightAdjusted1", imageHeightAdjusted1);
 println("Question: is this too big?", "\t\thint ... reposition image() above rect(div)");
 // While Looping: decrease imageWidth to decrease the calculated imageHeight (% decrease within multiplication asignment operator)
-while( imageHeightAdjusted1 > imageDivHeight ) {
+while ( imageHeightAdjusted1 > imageDivHeight ) {
   imageWidthAdjusted2 *= 0.99;
   imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRatio_GreatOne ; //CHANGE THIS?
 }//END WHILE

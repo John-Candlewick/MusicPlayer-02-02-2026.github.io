@@ -22,7 +22,7 @@ String imageDirectory = upArrow + open + upArrow + open + dependanciesFolder + o
 String pathway1 = imageDirectory + imageName1 + fileExtension;
 String pathway2 = imageDirectory + imageName2 + fileExtension;
 String pathway3 = imageDirectory + imageName3 + fileExtension;
-println(pathway1);
+//println(pathway1);
 //
 PImage image1 = loadImage( pathway1 );
 int imageWidth1 = 250;
