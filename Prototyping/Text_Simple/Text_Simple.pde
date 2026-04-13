@@ -29,10 +29,42 @@ rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 //
 //Strings, Text, Literal
+String title = "Wahoo!";
+/* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
+ - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
+ - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
+ - divWidth must include the font size
+ - if font is too big, wrap around happens
+ - OR full string is not drawn
+ */
+ //Fonts from OS
+ println("Start of Console"); //ERROR in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); //To list all available fonts on system
+ printArray(fontList); //For listing all possible fonts to choose, the createFont
+ //Spelling Counts and must compare CONSOLE v Tools / Create Font / Crate Font Spelling
+ //Tools / Create Font / Find Font / Do Not Press "OK". known conflict between loadFont() and createFont()
 //
 // Fonts from OS
+float fontSize = appHeight; //Entire Program, Algorithm to have smallest font size
+println( fontSize );
+PFont font; //Font Variable Name, able to have more than one Font
+String SegoeUIItalic = "Segoe UI Italic"; //Spellling of the Font Matters, see PFont.list() v Create Font above
+font = createFont(SegoeUIItalic, fontSize);
 //
-// Aspect Ratio for Harrington
+// Aspect Ratio for Segoe UI
+float fontSizeSegouUIItalic = 50; //Default fontSize for -100%
+float divHeightSegoeUIItalic = songTitleDivWidth; //Key:Value, value=120
+float segoeUIItalicAspectRatio = fontSizeSegouUIItalic / divHeightSegoeUIItalic; //#<1
+fontSize = songTitleDivWidth*segoeUIItalicAspectRatio * 0.75;
+println( fontSize );
 //
 //Drawing Text
+color blackInk = #000000; //AP MiniLesson on bit, 8-bit or byte (grey scale, 250), colour
+color whiteInk = #FFFFFF; //Grey Scale is 255
+color resetInk = whiteInk;
+fill(blackInk); //Ink, hexidecimal copied from Color Selector
+//Grey Scale 0-255
+textFont(font, fontSize); //must include textSize() before text() & textWidth()
+text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+fill(resetInk);
 //
