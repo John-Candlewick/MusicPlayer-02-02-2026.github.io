@@ -71,15 +71,29 @@ fill(blackInk); //Ink, hexidecimal copied from Color Selector
 //Grey Scale 0-255
 textAlign (CENTER, BASELINE); //Align X&Y, see Processing.Org / Reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+//
+//Note: drawing text after height dimension solved
+//WHILE solves length dimension
+//Additional docing required to adjust consistent text size for meaning in app
+Float constantDecrease = 0.99;
+int iWhile=0;
 textFont(font, fontSize1); //must include textSize() before text() & textWidth()
 while (textWidth(title) > songTitleDivWidth) {
-  println("here1");
+  println("While #1"); //INFINITE Loop Of Doom And Despair
+  iWhile++;
+  if ( iWhile>10000 ) {
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constnatDecrease;
+  textFont(font, fontSize1);
 }
 text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
 textFont(font, fontSize2); //must include textSize() before text() & textWidth()
-//while
+//while (textWidth(title) > songTitleDivWidth) (println("While#2");
 text(title, quitX, quitY, quitWidth, quitHeight );
 textFont(font, fontSize3); //must include textSize() before text() & textWidth()
+//while (textWidth(title) > songTitleDivWidth) (println("While#3");
 text(title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
 fill(resetInk);
 //
