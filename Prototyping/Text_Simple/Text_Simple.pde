@@ -10,18 +10,22 @@ int appHeight = displayHeight;
 int numberOfButton = 13; //Imaginary buttons on each side
 int widthOfButton = appWidth/numberOfButton;
 int beginningButtonSpace = widthOfButton;
+//
 float quitX = appWidth - appHeight*1/20;
 float quitY = 0;
 float quitWidth = appHeight*1/20;
 float quitHeight = appHeight*1/20;
+//^Oddball square in the corner
 float songTitleDivX = beginningButtonSpace;
 float songTitleDivY = appHeight*1.5/20;
 float songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
 float songTitleDivHeight = appHeight*1/10;
+//^Long bar for title
 float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
 float messageDIV_Y = appHeight*1.5/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
 float messageDIV_Height = appHeight*9/20;
+//^Oddball large square
 //
 //DIV: Image
 rect(quitX, quitY, quitWidth, quitHeight);
@@ -48,10 +52,10 @@ String title = "Wahoo!";
 float fontSize1 = appHeight; //Entire Program, Algorithm to have smallest font size
 float fontSize2 = appHeight; //Entire Program, Algorithm to have smallest font size
 float fontSize3 = appHeight; //Entire Program, Algorithm to have smallest font size
-println( fontSize );
+println( fontSize1 );//Changed from "fontSize" to "fontSize1"
 PFont font; //Font Variable Name, able to have more than one Font
 String SegoeUIItalic = "Segoe UI Italic"; //Spellling of the Font Matters, see PFont.list() v Create Font above
-font = createFont(SegoeUIItalic, fontSize);
+font = createFont(SegoeUIItalic, fontSize1); //Changed from "fontSize" to "fontSize1"
 //
 // Aspect Ratio for Segoe UI
 float fontSizeSegouUIItalic = 83; //Default fontSize for -100%
@@ -61,7 +65,7 @@ float textAdjustment = 0.9;
 fontSize1 = songTitleDivWidth*segoeUIItalicAspectRatio * textAdjustment;
 fontSize2 = messageDIV_Height*segoeUIItalicAspectRatio * textAdjustment;
 fontSize3 = quitHeight*segoeUIItalicAspectRatio * textAdjustment;
-println( fontSize );
+println( fontSize1 );//Changed from "fontSize" to "fontSize1"
 //
 //Drawing Text
 color blackInk = #000000; //AP MiniLesson on bit, 8-bit or byte (grey scale, 250), colour
@@ -85,7 +89,7 @@ while (textWidth(title) > songTitleDivWidth) {
     println("Infinite WHILE Loop");
     exit();
   }
-  fontSize1 *= constnatDecrease;
+  fontSize1 *= constantDecrease;
   textFont(font, fontSize1);
 }
 text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
