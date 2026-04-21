@@ -69,3 +69,4 @@ if ( playList[currentSong]==null || soundEffects[currentSong]==null ) { //ERROR,
   playList[currentSong].play();
   printArray();
 playList[currentSong].play();
+.
