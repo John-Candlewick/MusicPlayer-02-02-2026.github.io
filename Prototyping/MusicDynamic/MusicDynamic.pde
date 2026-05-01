@@ -28,8 +28,16 @@ Minim minim;  //initates entire class
 int numberOfSongs = 1; //Best Practcie
 int numberOfSoundEffect = 1;
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffect ];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+//
+float songTitleDivX, songTitleDivY, songTitleDivY, soneTitleDivWidth, songTitleDivHeight;
+color blackInk, resetInk;
+float constantDecrease;
+int iWhile;
+float fontSize1, fontSize2, fontSize3;
+PFont font;
 //
 void setup() {
   //Display
@@ -37,6 +45,17 @@ void setup() {
   //fullScreen();  //displayWidth //displayHeight
   int appWidth = width; //Best Practice
   int appHeight = height;
+  //
+  //DIVs, Population
+  int numbrOfButtons = 13;
+  int widthOfButton = appWidth/numberOfButtons;
+  int beginningButtonSpace = widthOfButton;
+  float 
+  float
+  float
+  float
+  //
+  //DIV: rect()
   //
   //Music Loading - STRUCTURED Review
   minim = new Minim(this); //Manditory
@@ -64,19 +83,46 @@ void setup() {
   String soundEffectsDirectory = upArrow = open + upArrow + open + dependenciesFolder + open + soundEffectsFolder + open ; //Concatenation
   String pathway;
   for ( int i=0; i<numberOfSongs; i++ ) {
+    //CAUTION: removed ReadMe.txt
+    pathway = musicDirectory + songName[i] + fileExtension_mp3; //to be rewritten and deleted once file is loaded
+    playList[ i ] = minim.loadFile( pathway ) ;//error: Verify spelling & library installed, sketch / import library
+    playListMetaData[ i ] = playList[ i ].getMetaData();
+    //caution: not current song var
+  }
+  pathway = soundEffectDirectory + soundEffect1 + fileExtension_mp3; //Rewritting file
+  soundEffects[currentsong] = minm.loadFile( pathway ); //error: verify speeling & library installed, sketch / import library
+  //
+  for ( int i=0; i<numberOfSongs; i++ ) {
     if ( playList[i]==null ) { //ERROR playlist is NULL
-    //see FILE or minim.loadFile
-    println("The playlist did not load properly");
-    printArray(playList);
-    exit();
+      //see FILE or minim.loadFile
+      println("The playlist did not load properly");
+      printArray(playList);
+      exit();
     }
   }
   if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
-    println("The Sound Effects did not load properly");
-    printArray(soundEffects);
-    exit();
-    }
-    //
+   println("The Sound Effects did not load properly");
+   printArray(soundEffects);
+   exit();
+ } 
+ //
+ /*Fonts from OS
+   println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+   String[] fontList = PFont.list(); //To list all fonts available on system
+   printArray(fontList); //For listing all possible fonts to choose, then createFont
+   //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
+   //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
+   */
+  // Students enter all text from Case Study
+  String x = "X";
+  //
+  // Fronts from OS
+  //rect(height) is biggest font is word is the smallest
+  fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight | change this to YOUR DIVs
+  fontSize2 = messageDIV_Height; // change this to YOUR DIVs
+  fontSize3 = quitHeight; // change this to YOUR DIVs
+  //PFont font; //Font Variable Name, able to have more than one font
+  String 
 }//End Setup
 //
 void draw() {

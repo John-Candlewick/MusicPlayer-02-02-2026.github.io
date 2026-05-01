@@ -11,6 +11,7 @@ int numberOfButton = 13; //Imaginary buttons on each side
 int widthOfButton = appWidth/numberOfButton;
 int beginningButtonSpace = widthOfButton;
 //
+//
 float quitX = appWidth - appHeight*1/20;
 float quitY = 0;
 float quitWidth = appHeight*1/20;
