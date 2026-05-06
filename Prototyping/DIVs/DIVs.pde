@@ -13,6 +13,9 @@ float DivY = appHeight * 108 / paperHeight;
 float DivWidth = appWidth * 192 / paperWidth;
 float DivHeight = appHeight * 108 / paperHeight;
 
+//Change values from plain numbers to division.
+//EXAMPLE: 1920/13 = 147.69
+
 //rect( DivX, DivY, DivWidth, DivHeight );
 rect( DivX, DivY, DivWidth, DivHeight );
 rect( DivX = 147.69, DivY = 90, DivWidth = 886.15, DivHeight = 147.69 ); //song title //Copy and Paste, rename variables
