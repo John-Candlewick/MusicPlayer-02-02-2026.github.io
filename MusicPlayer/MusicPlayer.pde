@@ -21,7 +21,7 @@ void setup() {
   //DIVs Population using unitless ratios (i.e. millimeters to pixels)
   //See Case Study
   int paperWidth = 1920; //Best Practice: loacal variables use to make DIV Variables
-  int paperWidth = 1080; //Make sure to not copy the teahcers numbers
+  int paperHeight = 1080; //Make sure to not copy the teahcers numbers
   float DivX = appWidth * 1920 / paperWidth;
   float DivY = appHeight * 1080 / paperHeight;
   float DivWidth = appWidth * 1920 / paperWidth;
