@@ -8,8 +8,8 @@ int appHeight = displayHeight;
 //
 int paperWidth = 1920;
 int paperHeight = 1080;
-float NOBH = 13; //Abreviation = Number Of Buttons Horizontally
-float NOBV = 7.3125; //Abreviation = Number Of Buttons Vertically
+float NoBH = 13; //Abreviation = Number Of Buttons Horizontally
+float NoBV = 7.3125; //Abreviation = Number Of Buttons Vertically
 float DivX = appWidth * 1920 / paperWidth;
 float DivY = appHeight * 1080 / paperHeight;
 float DivWidth = appWidth * 1920 / paperWidth;
@@ -20,28 +20,28 @@ float DivHeight = appHeight * 1080 / paperHeight;
 
 //rect( DivX, DivY, DivWidth, DivHeight ); <-rect DIV 'recipe'
 rect( DivX, DivY, DivWidth, DivHeight );
-rect( DivX = paperWidth/NOBH, DivY = paperHeight/NOBV*0+90, DivWidth = paperWidth/NOBH*6, DivHeight = paperHeight/NOBV ); //song title //Copy and Paste, rename variables
-rect( DivX = paperWidth/NOBH, DivY = paperHeight/NOBV+90, DivWidth = paperWidth/NOBH*6, DivHeight = paperHeight/NOBV ); // bar below song title
-rect( DivX = paperWidth/NOBH, DivY = paperHeight/NOBV*2+90, DivWidth = paperWidth/NOBH*2, DivHeight = paperHeight/NOBV*2 ); // artist pfp
-rect( DivX = paperWidth/NOBH*3, DivY = paperHeight/NOBV*2+90, DivWidth = paperWidth/NOBH*4, DivHeight = paperHeight/NOBV ); // artist desc
-rect( DivX = paperWidth/NOBH*3, DivY = paperHeight/NOBV*3+90, DivWidth = paperWidth/NOBH*4, DivHeight = paperHeight/NOBV ); // more artist desc?
-rect( DivX = paperWidth/NOBH*8, DivY = paperHeight/NOBV*0+90, DivWidth = paperWidth/NOBH*4, DivHeight = paperHeight/NOBV*4 ); // song image
+rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); //song title //Copy and Paste, rename variables
+rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); // bar below song title
+rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*2, DivHeight = paperHeight/NoBV*2 ); // artist pfp
+rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // artist desc
+rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*3+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // more artist desc?
+rect( DivX = paperWidth/NoBH*8, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV*4 ); // song image
 // the buttons (figure out which are which)
-rect( DivX = paperWidth/NOBH, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #1
-rect( DivX = paperWidth/NOBH*2, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #2
-rect( DivX = paperWidth/NOBH*3, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #3
-rect( DivX = paperWidth/NOBH*4, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #4
-rect( DivX = paperWidth/NOBH*5, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #5
-rect( DivX = paperWidth/NOBH*6, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #6
-rect( DivX = paperWidth/NOBH*7, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #7
-rect( DivX = paperWidth/NOBH*8, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #8
-rect( DivX = paperWidth/NOBH*9, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #9
-rect( DivX = paperWidth/NOBH*10, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #10
-rect( DivX = paperWidth/NOBH*11, DivY = 773.45, DivWidth = paperWidth/NOBH, DivHeight = paperHeight/NOBV ); // button #11
+rect( DivX = paperWidth/NoBH, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #1
+rect( DivX = paperWidth/NoBH*2, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #2
+rect( DivX = paperWidth/NoBH*3, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #3
+rect( DivX = paperWidth/NoBH*4, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #4
+rect( DivX = paperWidth/NoBH*5, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #5
+rect( DivX = paperWidth/NoBH*6, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #6
+rect( DivX = paperWidth/NoBH*7, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #7
+rect( DivX = paperWidth/NoBH*8, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #8
+rect( DivX = paperWidth/NoBH*9, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #9
+rect( DivX = paperWidth/NoBH*10, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #10
+rect( DivX = paperWidth/NoBH*11, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #11
 // the small buttons at the top corners?
 rect ( DivX = 1870, DivY = 0, DivWidth = 50, DivHeight = 50);//X button/exit button
 // progress bar
-rect ( DivX = paperWidth/NOBH, DivY = 980, DivWidth = paperWidth/NOBH*11, DivHeight = 15);
+rect ( DivX = paperWidth/NoBH, DivY = 980, DivWidth = paperWidth/NoBH*11, DivHeight = 15);
 // times at ends of progress bar
 rect ( DivX = 27.69, DivY = 952, DivWidth = 110, DivHeight = 70); //left box
 rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70); //right box
