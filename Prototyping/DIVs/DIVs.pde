@@ -21,7 +21,7 @@ float DivHeight = appHeight * 1080 / paperHeight;
 //rect( DivX, DivY, DivWidth, DivHeight ); <-rect DIV 'recipe'
 rect( DivX, DivY, DivWidth, DivHeight );
 rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); //song title //Copy and Paste, rename variables
-rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); // bar below song title
+rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); // bar below song title, find a proper label
 rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*2, DivHeight = paperHeight/NoBV*2 ); // artist pfp
 rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // artist desc
 rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*3+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // more artist desc?
