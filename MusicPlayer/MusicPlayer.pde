@@ -9,11 +9,13 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
-//Global Variables
-//
+/*Global Variables
+ -
+ -
+*/
 void setup() {
   //Display
-  //fullscreen();
+  fullScreen();
   size(1920, 1080);
   int appWidth = width; //displayWdith
   int appHeight = height; //displayHeight
@@ -29,9 +31,22 @@ void setup() {
   float DivWidth = appWidth * 1920 / paperWidth;
   float DivHeight = appHeight * 1080 / paperHeight;
   //
+  //2D Music Symbal Variables
+  //
+  //Directiry or Pathway to Images
+  //String-Vars of Folders and File Names
+  //Concatenation of Pathways
+  //PImage Vars + Dimensions (width & height) - loading pathways
+  //
   //DIVs
   //rect( DivX, DivY, DivWidth, DivHeight ); //See Case Study
-  //rect( songTtitleDivX, songTitleDivY, DivWidth, DivHeight );
+  //rect( songTtitleDivX, songTitleDivY, songtitleDivWidth, songTitleDivHeight );
+  //
+  //2D music Symbol Shapes, 2D shapes needed to draw
+  //
+  //Images and Aspect Ratio Algorithm, including WHILE Loop
+  //image();
+  //
   rect( DivX, DivY, DivWidth, DivHeight );
   rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); //song title //Copy and Paste, rename variables
   rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); // bar below song title, find a proper label

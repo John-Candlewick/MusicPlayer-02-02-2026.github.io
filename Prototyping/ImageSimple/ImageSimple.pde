@@ -3,6 +3,7 @@
 //
 //Display
 fullScreen();
+size(1920, 1080);
 int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
@@ -38,7 +39,7 @@ int imageHeight3 = 166;
 int numberOfButton = 13; //Imaginary buttons on each side
 int widthOfButton = appWidth/numberOfButton;
 int beginningButtonSpace = widthOfButton;
-float imageDivX = beginningButtonSpace*8;
+float imageDivX = beginningButtonSpace*8; //IMPORTANT: when copied and pasted into MusicPlayer IMAGES BOX DOES NOT FIT INTO DIV, this processing file DivX is likely off
 float imageDivY = appHeight/7.3125*0+90;
 float imageDivWidth = appWidth/13*4;
 float imageDivHeight = appHeight/7.3125*4; //1+1.5=2.5, half of the total height
