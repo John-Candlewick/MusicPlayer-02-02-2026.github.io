@@ -12,7 +12,7 @@ import ddf.minim.ugens.*;
 /*Global Variables
  -
  -
-*/
+ */
 void setup() {
   //Display
   fullScreen();
@@ -73,6 +73,7 @@ void setup() {
   // times at ends of progress bar
   rect ( DivX = 27.69, DivY = 952, DivWidth = 110, DivHeight = 70); //left box
   rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70); //right box
+  println(paperWidth/NoBH); //ImageSimple program doesn't include decimals, may be because it uses appWidth as the divided variable, try adjusting it to be like paperWidth
   //
 }//End Setup
 //
