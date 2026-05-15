@@ -111,7 +111,7 @@ void setup() {
   float imageDivX = beginningButtonSpace*8+1; //IMPORTANT: when copied and pasted into MusicPlayer IMAGES BOX DOES NOT FIT INTO DIV, this processing file DivX is likely off. NEEDS +8 TO ALIGN, figure out why
   float imageDivY = appHeight/7.3125*0+90+1;
   float imageDivWidth = appWidth/13*4+1.5;//Figure out why it doesn't align with the DIV, most likely has something to do with the width
-  float imageDivHeight = appHeight/7.3125*4; //1+1.5=2.5, half of the total height
+  float imageDivHeight = appHeight/7.3125*4-1.7; //1+1.5=2.5, half of the total height //SUBTRACTION to make it fit within DIV
   //Confirm the image fits perfectly within the confines of the DIV
 
   //Image: Aspect Ratio Aglorithm
