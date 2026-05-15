@@ -36,10 +36,10 @@ int imageWidth3 = 250;
 int imageHeight3 = 166;
 //
 //Population: DIVs
-int numberOfButton = 13; //Imaginary buttons on each side
-int widthOfButton = 1920/13;
+float numberOfButton = 13; //Imaginary buttons on each side
+float widthOfButton = displayWidth/numberOfButton;
 //int widthOfButton = appWidth/numberOfButton;
-int beginningButtonSpace = widthOfButton;
+float beginningButtonSpace = widthOfButton;
 float imageDivX = beginningButtonSpace*8; //IMPORTANT: when copied and pasted into MusicPlayer IMAGES BOX DOES NOT FIT INTO DIV, this processing file DivX is likely off. NEEDS +8 TO ALIGN, figure out why
 float imageDivY = appHeight/7.3125*0+90;
 float imageDivWidth = appWidth/13*4;
@@ -71,3 +71,5 @@ println(beginningButtonSpace*8);
 println(beginningButtonSpace);
 println(appWidth);
 println(1920./13.);
+
+//IMPORTANT: The code in 'MusicPlayer' contains fixes, adjust this code to match 'MusicPlayer' if this code will be used further
