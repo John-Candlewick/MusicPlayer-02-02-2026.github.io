@@ -11,11 +11,10 @@ int numberOfButton = 13; //Imaginary buttons on each side
 int widthOfButton = appWidth/numberOfButton;
 int beginningButtonSpace = widthOfButton;
 //
-//
-float quitX = appWidth - appHeight*1/20;
+float quitX = appWidth - appHeight*1/20;//change to 1870??
 float quitY = 0;
-float quitWidth = appHeight*1/20;
-float quitHeight = appHeight*1/20;
+float quitWidth = appHeight*1/20;//change to 50?
+float quitHeight = appHeight*1/20;//change to 50?
 //^Oddball square in the corner
 float songTitleDivX = beginningButtonSpace;
 float songTitleDivY = appHeight*1.5/20;
@@ -34,7 +33,7 @@ rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 //
 //Strings, Text, Literal
-String title = "Wahoo!";
+String title = "Wahoo!";//Song title?
 /* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
  - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
  - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
@@ -42,31 +41,21 @@ String title = "Wahoo!";
  - if font is too big, wrap around happens
  - OR full string is not drawn
  */
- //Fonts from OS
+ /*Fonts from OS
  println("Start of Console"); //ERROR in case CONSOLE Memory not enough
  String[] fontList = PFont.list(); //To list all available fonts on system
  printArray(fontList); //For listing all possible fonts to choose, the createFont
  //Spelling Counts and must compare CONSOLE v Tools / Create Font / Crate Font Spelling
  //Tools / Create Font / Find Font / Do Not Press "OK". known conflict between loadFont() and createFont()
-//
+ */
+// 
 // Fonts from OS
-float fontSize1 = appHeight; //Entire Program, Algorithm to have smallest font size
-float fontSize2 = appHeight; //Entire Program, Algorithm to have smallest font size
-float fontSize3 = appHeight; //Entire Program, Algorithm to have smallest font size
-println( fontSize1 );//Changed from "fontSize" to "fontSize1"
+float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+float fontSize2 = messageDIV_Height;
+float fontSize3 = quitHeight; //Change these to match your own prefered DIV names
 PFont font; //Font Variable Name, able to have more than one Font
 String SegoeUIItalic = "Segoe UI Italic"; //Spellling of the Font Matters, see PFont.list() v Create Font above
 font = createFont(SegoeUIItalic, fontSize1); //Changed from "fontSize" to "fontSize1"
-//
-// Aspect Ratio for Segoe UI
-float fontSizeSegouUIItalic = 83; //Default fontSize for -100%
-float divHeightSegoeUIItalic = songTitleDivWidth; //Key:Value, value=120
-float segoeUIItalicAspectRatio = fontSizeSegouUIItalic / divHeightSegoeUIItalic; //#<1
-float textAdjustment = 0.9;
-fontSize1 = songTitleDivWidth*segoeUIItalicAspectRatio * textAdjustment;
-fontSize2 = messageDIV_Height*segoeUIItalicAspectRatio * textAdjustment;
-fontSize3 = quitHeight*segoeUIItalicAspectRatio * textAdjustment;
-println( fontSize1 );//Changed from "fontSize" to "fontSize1"
 //
 //Drawing Text
 color blackInk = #000000; //AP MiniLesson on bit, 8-bit or byte (grey scale, 250), colour
@@ -74,17 +63,15 @@ color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;
 fill(blackInk); //Ink, hexidecimal copied from Color Selector
 //Grey Scale 0-255
-textAlign (CENTER, BASELINE); //Align X&Y, see Processing.Org / Reference
+textAlign (CENTER, CENTER); //Align X&Y, see Processing.Org / Reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 //
-//Note: drawing text after height dimension solved
-//WHILE solves length dimension
-//Additional docing required to adjust consistent text size for meaning in app
-Float constantDecrease = 0.99;
+//Procedure Passing RECT(#2) && fontSize(RECT#)
+float constantDecrease = 0.99;
 int iWhile=0;
 textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-while (textWidth(title) > songTitleDivWidth) {
-  println("While #1"); //INFINITE Loop Of Doom And Despair
+while ( textWidth(title) > songTitleDivWidth ) {
+  //println("While #1"); //INFINITE Loop Of Doom And Despair
   iWhile++;
   if ( iWhile>10000 ) {
     println("Infinite WHILE Loop");
@@ -94,11 +81,34 @@ while (textWidth(title) > songTitleDivWidth) {
   textFont(font, fontSize1);
 }
 text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+//
 textFont(font, fontSize2); //must include textSize() before text() & textWidth()
-//while (textWidth(title) > songTitleDivWidth) (println("While#2");
+iWhile=0;
+while ( textWidth(title) > songTitleDivWidth ) {
+  //println("While #2"); //INFINITE Loop Of Doom And Despair
+  iWhile++;
+  if ( iWhile>10000 ) { //>1000 means -1 text or i
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize2 *= constantDecrease;
+  textFont(font, fontSize2);
+}
 text(title, quitX, quitY, quitWidth, quitHeight );
+//
 textFont(font, fontSize3); //must include textSize() before text() & textWidth()
-//while (textWidth(title) > songTitleDivWidth) (println("While#3");
-text(title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+iWhile=0;
+while ( textWidth(title) > songTitleDivWidth ) {
+  //println("While #3"); //INFINITE Loop Of Doom And Despair
+  iWhile++;
+  if ( iWhile>10000 ) { //>1000 means -1 text or i
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize3 *= constantDecrease;
+  textFont(font, fontSize3);
+}
+text(title, quitX, quitY, quitWidth, quitHeight );
 fill(resetInk);
 //
+//IMPORTANT: something went wrong and the text from the large box has disapeared and the text for the quit box seems extremely large and doesn't fit
