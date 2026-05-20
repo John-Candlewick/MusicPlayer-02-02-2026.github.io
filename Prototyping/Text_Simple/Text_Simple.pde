@@ -15,7 +15,7 @@ float quitX = appWidth - appHeight*1/20;//change to 1870??
 float quitY = 0;
 float quitWidth = appHeight*1/20;//change to 50?
 float quitHeight = appHeight*1/20;//change to 50?
-//^Oddball square in the corner
+//^Oddball small square in the corner
 float songTitleDivX = beginningButtonSpace;
 float songTitleDivY = appHeight*1.5/20;
 float songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;

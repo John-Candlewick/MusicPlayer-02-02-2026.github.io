@@ -10,9 +10,10 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 /*Global Variables
- -
- -
+ -Possible DIV-Vars needed in draw(), etc.
+ - MUST: Music Button-vars, possibly assoctaed DIV-vars
  */
+//
 void setup() {
   //Display
   fullScreen();
@@ -31,6 +32,12 @@ void setup() {
   float DivWidth = appWidth * 1920 / paperWidth;
   float DivHeight = appHeight * 1080 / paperHeight;
   //
+  //Text Setup, includes text & font variables
+  //
+  //Literal Text ... String Variables
+  //
+  //Font Size Variables, correlated with DIV-Height Variables
+  //
   //2D Music Symbal Variables
   //
   //Directiry or Pathway to Images
@@ -43,6 +50,12 @@ void setup() {
   //rect( songTtitleDivX, songTitleDivY, songtitleDivWidth, songTitleDivHeight );
   //
   //2D music Symbol Shapes, 2D shapes needed to draw
+  //
+  //Drawing Text - Formatting Text Functions
+  //
+  //Drawing Text - Font Size Adjustment (WHILE Loop)
+  //
+  //Draw Text with adjusted DIV Variables
   //
   //Images and Aspect Ratio Algorithm, including WHILE Loop
   //image();
