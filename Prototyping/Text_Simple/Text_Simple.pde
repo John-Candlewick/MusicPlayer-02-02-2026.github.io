@@ -10,22 +10,23 @@ int appHeight = displayHeight;
 int numberOfButton = 13; //Imaginary buttons on each side
 int widthOfButton = appWidth/numberOfButton;
 int beginningButtonSpace = widthOfButton;
+int extraHeight = 90; //Adjust this to make it more understandable?
 //
-float quitX = appWidth - appHeight*1/20;//change to 1870??
+float quitX = appWidth - appHeight/20;
 float quitY = 0;
-float quitWidth = appHeight*1/20;//change to 50?
-float quitHeight = appHeight*1/20;//change to 50?
-//^Oddball small square in the corner
+float quitWidth = appHeight/20;
+float quitHeight = appHeight/20;
+//^Quit button
 float songTitleDivX = beginningButtonSpace;
-float songTitleDivY = appHeight*1.5/20;
-float songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
-float songTitleDivHeight = appHeight*1/10;
-//^Long bar for title
-float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*1.5/20;
-float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-float messageDIV_Height = appHeight*9/20;
-//^Oddball large square
+float songTitleDivY = extraHeight;
+float songTitleDivWidth = appWidth/numberOfButton*6;
+float songTitleDivHeight = appHeight/7.3125;
+//^Long bar for song title
+float messageDIV_X = beginningButtonSpace;
+float messageDIV_Y = appWidth/numberOfButton+extraHeight;
+float messageDIV_Width = appWidth/numberOfButton*6;
+float messageDIV_Height = appHeight/7.3125;
+//^Text bar bellow song title
 //
 //DIV: Image
 rect(quitX, quitY, quitWidth, quitHeight);
@@ -33,7 +34,7 @@ rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 //
 //Strings, Text, Literal
-String title = "Wahoo!";//Song title?
+String title = "Song Title";//Song title?
 /* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
  - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
  - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
@@ -50,12 +51,12 @@ String title = "Wahoo!";//Song title?
  */
 // 
 // Fonts from OS
-float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+float fontSize1 = songTitleDivHeight-songTitleDivHeight/3;
 float fontSize2 = messageDIV_Height;
 float fontSize3 = quitHeight; //Change these to match your own prefered DIV names
 PFont font; //Font Variable Name, able to have more than one Font
-String SegoeUIItalic = "Segoe UI Italic"; //Spellling of the Font Matters, see PFont.list() v Create Font above
-font = createFont(SegoeUIItalic, fontSize1); //Changed from "fontSize" to "fontSize1"
+String Tahoma = "Tahoma"; //Spellling of the Font Matters, see PFont.list() v Create Font above
+font = createFont(Tahoma, fontSize1); //Changed from "fontSize" to "fontSize1"
 //
 //Drawing Text
 color blackInk = #000000; //AP MiniLesson on bit, 8-bit or byte (grey scale, 250), colour
