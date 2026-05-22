@@ -86,7 +86,7 @@ void setup() {
   // times at ends of progress bar
   rect ( DivX = 27.69, DivY = 952, DivWidth = 110, DivHeight = 70); //left box
   rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70); //right box
-  println(paperWidth/NoBH); //ImageSimple program doesn't include decimals, may be because it uses appWidth as the divided variable, try adjusting it to be like paperWidth
+  println(paperWidth/NoBH); //ImageSimple program doesn't include decimals becuase int is used
   //
   String upArrow = "..";
   String dependanciesFolder = "Dependencies";
@@ -149,11 +149,6 @@ void setup() {
   //image(image1, 0, 0);
   image(image2, imageDivX, imageDivY, imageWidthAdjusted2, imageDivHeight);
   //image(image3, 0, 0);
-  println(beginningButtonSpace*8);
-  println(beginningButtonSpace);
-  println(appWidth);
-  println(1920./13.);
-  println(paperWidth/NoBH*8, paperHeight/NoBV*0+90, paperWidth/NoBH*4, paperHeight/NoBV*4);
 }//End Setup
 //
 void draw() {

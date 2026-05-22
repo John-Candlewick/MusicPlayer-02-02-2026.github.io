@@ -40,10 +40,10 @@ float numberOfButton = 13; //Imaginary buttons on each side
 float widthOfButton = displayWidth/numberOfButton;
 //int widthOfButton = appWidth/numberOfButton;
 float beginningButtonSpace = widthOfButton;
-float imageDivX = beginningButtonSpace*8; //IMPORTANT: when copied and pasted into MusicPlayer IMAGES BOX DOES NOT FIT INTO DIV, this processing file DivX is likely off. NEEDS +8 TO ALIGN, figure out why
-float imageDivY = appHeight/7.3125*0+90;
-float imageDivWidth = appWidth/13*4;
-float imageDivHeight = appHeight/7.3125*4; //1+1.5=2.5, half of the total height
+float imageDivX = beginningButtonSpace*8+1; //IMPORTANT: when copied and pasted into MusicPlayer IMAGES BOX DOES NOT FIT INTO DIV, this processing file DivX is likely off. NEEDS +8 TO ALIGN, figure out why
+float imageDivY = appHeight/7.3125*0+90+1;
+float imageDivWidth = appWidth/13*4+1.5;
+float imageDivHeight = appHeight/7.3125*4-1.7; //1+1.5=2.5, half of the total height
 
 //Image: Aspect Ratio Aglorithm
 //println( float(imageWidth2)/ float(imageHeight2) );
@@ -67,9 +67,5 @@ rect(imageDivX, imageDivY, imageDivWidth, imageDivHeight);
 //image(image1, 0, 0);
 image(image2, imageDivX, imageDivY, imageWidthAdjusted2, imageDivHeight);
 //image(image3, 0, 0);
-println(beginningButtonSpace*8);
-println(beginningButtonSpace);
-println(appWidth);
-println(1920./13.);
 
 //IMPORTANT: The code in 'MusicPlayer' contains fixes, adjust this code to match 'MusicPlayer' if this code will be used further
