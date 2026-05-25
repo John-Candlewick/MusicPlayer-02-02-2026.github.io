@@ -1,3 +1,4 @@
+//IMPORTANT: DIVs may not be needed in here since they are already in the MusicPlayer program
 /* Text Simple | Hardcoded
  */
 //
@@ -22,19 +23,35 @@ float songTitleDivY = extraHeight;
 float songTitleDivWidth = appWidth/numberOfButton*6;
 float songTitleDivHeight = appHeight/7.3125;
 //^Long bar for song title
-float messageDIV_X = beginningButtonSpace;
-float messageDIV_Y = appWidth/numberOfButton+extraHeight;
-float messageDIV_Width = appWidth/numberOfButton*6;
-float messageDIV_Height = appHeight/7.3125;
-//^Text bar bellow song title
+float songDetailsDivX = beginningButtonSpace;
+float songDetailsDivY = appWidth/numberOfButton+extraHeight;
+float songDetailsDivWidth = appWidth/numberOfButton*6;
+float songDetailsDivHeight = appHeight/7.3125;
+//^Text bar bellow song title for song details
+float artistNameDivX = beginningButtonSpace*3;
+float artistNameDivY = appWidth/numberOfButton*2+extraHeight;
+float artistNameDivWidth = appWidth/numberOfButton*4;
+float artistNameDivHeight = appHeight/7.3125;
+//^Artist name
+float artistDetailsDivX = beginningButtonSpace*3;
+float artistDetailsDivY = appWidth/numberOfButton*3+extraHeight;
+float artistDetailsWidth = appWidth/numberOfButton*4;
+float artistDetailsHeight = appHeight/7.3125;
+//^Artist details
 //
 //DIV: Image
 rect(quitX, quitY, quitWidth, quitHeight);
 rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+rect(songDetailsDivX, songDetailsDivY, songDetailsDivWidth, songDetailsDivHeight);
+rect(artistNameDivX, artistNameDivY, artistNameDivWidth, artistNameDivHeight);
+rect(artistDetailsDivX, artistDetailsDivY, artistDetailsWidth, artistDetailsHeight);
 //
 //Strings, Text, Literal
-String title = "Song Title";//Song title?
+String title = "Song Title";//Song title? Find a song people won't judge you for listening to
+String songDetails = "Song Details";
+String exit = "X";
+String artistName = "Artist Name";
+String artistDetails = "Artist Details";
 /* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
  - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
  - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
@@ -51,8 +68,8 @@ String title = "Song Title";//Song title?
  */
 // 
 // Fonts from OS
-float fontSize1 = songTitleDivHeight-songTitleDivHeight/3;
-float fontSize2 = messageDIV_Height;
+float fontSize1 = songTitleDivHeight-songTitleDivHeight/2;//Divide by 2 or 3 depending on amount of text
+float fontSize2 = songDetailsDivHeight;//get rid of?
 float fontSize3 = quitHeight; //Change these to match your own prefered DIV names
 PFont font; //Font Variable Name, able to have more than one Font
 String Tahoma = "Tahoma"; //Spellling of the Font Matters, see PFont.list() v Create Font above
@@ -83,7 +100,7 @@ while ( textWidth(title) > songTitleDivWidth ) {
 }
 text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
 //
-textFont(font, fontSize2); //must include textSize() before text() & textWidth()
+textFont(font, fontSize1); //must include textSize() before text() & textWidth()
 iWhile=0;
 while ( textWidth(title) > songTitleDivWidth ) {
   //println("While #2"); //INFINITE Loop Of Doom And Despair
@@ -93,9 +110,9 @@ while ( textWidth(title) > songTitleDivWidth ) {
     exit();
   }
   fontSize2 *= constantDecrease;
-  textFont(font, fontSize2);
+  textFont(font, fontSize1);
 }
-text(title, quitX, quitY, quitWidth, quitHeight );
+text(songDetails, songDetailsDivX, songDetailsDivY, songDetailsDivWidth, songDetailsDivHeight );
 //
 textFont(font, fontSize3); //must include textSize() before text() & textWidth()
 iWhile=0;
@@ -109,7 +126,7 @@ while ( textWidth(title) > songTitleDivWidth ) {
   fontSize3 *= constantDecrease;
   textFont(font, fontSize3);
 }
-text(title, quitX, quitY, quitWidth, quitHeight );
+text(exit, quitX, quitY, quitWidth, quitHeight );
 fill(resetInk);
 //
 //IMPORTANT: something went wrong and the text from the large box has disapeared and the text for the quit box seems extremely large and doesn't fit
