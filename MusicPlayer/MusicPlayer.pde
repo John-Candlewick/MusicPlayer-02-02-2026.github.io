@@ -88,6 +88,8 @@ void setup() {
   rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70); //right box
   println(paperWidth/NoBH); //ImageSimple program doesn't include decimals becuase int is used
   //
+  //Inserting text program here seemed to work with some adjustments
+  //
   String upArrow = "..";
   String dependanciesFolder = "Dependencies";
   String imagesFolder = "Images";
@@ -110,8 +112,8 @@ void setup() {
   int imageWidth1 = 250;
   int imageHeight = 250;
   PImage image2 = loadImage( pathway2 );
-  int imageWidth2 = 250;
-  int imageHeight2 = 124;
+  int imageWidth2 = 250;//Subject to change when actual song image is chosen, preferably find a 1:1 image
+  int imageHeight2 = 124;//^^^
   PImage image3 = loadImage( pathway3 );
   int imageWidth3 = 250;
   int imageHeight3 = 166;

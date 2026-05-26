@@ -1,4 +1,5 @@
-//IMPORTANT: DIVs may not be needed in here since they are already in the MusicPlayer program
+//IMPORTANT: DIVs may not be needed in here since they are already in the MusicPlayer program OR vice versa
+//Clean up "While" areas
 /* Text Simple | Hardcoded
  */
 //
@@ -8,35 +9,35 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 //Population: DIVs
-int numberOfButton = 13; //Imaginary buttons on each side
-int widthOfButton = appWidth/numberOfButton;
+int NoBH = 13; //Imaginary buttons on each side
+int widthOfButton = appWidth/NoBH;
 int beginningButtonSpace = widthOfButton;
 int extraHeight = 90; //Adjust this to make it more understandable?
 //
-float quitX = appWidth - appHeight/20;
+float quitX = appWidth - 50;
 float quitY = 0;
-float quitWidth = appHeight/20;
-float quitHeight = appHeight/20;
+float quitWidth = 50;
+float quitHeight = 50;
 //^Quit button
 float songTitleDivX = beginningButtonSpace;
 float songTitleDivY = extraHeight;
-float songTitleDivWidth = appWidth/numberOfButton*6;
+float songTitleDivWidth = appWidth/NoBH*6;
 float songTitleDivHeight = appHeight/7.3125;
 //^Long bar for song title
 float songDetailsDivX = beginningButtonSpace;
-float songDetailsDivY = appWidth/numberOfButton+extraHeight;
-float songDetailsDivWidth = appWidth/numberOfButton*6;
+float songDetailsDivY = appWidth/NoBH+extraHeight;
+float songDetailsDivWidth = appWidth/NoBH*6;
 float songDetailsDivHeight = appHeight/7.3125;
 //^Text bar bellow song title for song details
 float artistNameDivX = beginningButtonSpace*3;
-float artistNameDivY = appWidth/numberOfButton*2+extraHeight;
-float artistNameDivWidth = appWidth/numberOfButton*4;
+float artistNameDivY = appWidth/NoBH*2+extraHeight;
+float artistNameDivWidth = appWidth/NoBH*4;
 float artistNameDivHeight = appHeight/7.3125;
 //^Artist name
 float artistDetailsDivX = beginningButtonSpace*3;
-float artistDetailsDivY = appWidth/numberOfButton*3+extraHeight;
-float artistDetailsWidth = appWidth/numberOfButton*4;
-float artistDetailsHeight = appHeight/7.3125;
+float artistDetailsDivY = appWidth/NoBH*3+extraHeight;
+float artistDetailsDivWidth = appWidth/NoBH*4;
+float artistDetailsDivHeight = appHeight/7.3125;
 //^Artist details
 //
 //DIV: Image
@@ -44,7 +45,7 @@ rect(quitX, quitY, quitWidth, quitHeight);
 rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(songDetailsDivX, songDetailsDivY, songDetailsDivWidth, songDetailsDivHeight);
 rect(artistNameDivX, artistNameDivY, artistNameDivWidth, artistNameDivHeight);
-rect(artistDetailsDivX, artistDetailsDivY, artistDetailsWidth, artistDetailsHeight);
+rect(artistDetailsDivX, artistDetailsDivY, artistDetailsDivWidth, artistDetailsDivHeight);
 //
 //Strings, Text, Literal
 String title = "Song Title";//Song title? Find a song people won't judge you for listening to
@@ -68,7 +69,7 @@ String artistDetails = "Artist Details";
  */
 // 
 // Fonts from OS
-float fontSize1 = songTitleDivHeight-songTitleDivHeight/2;//Divide by 2 or 3 depending on amount of text
+float fontSize1 = songTitleDivHeight-songTitleDivHeight/2;//Divide by 2 or 3 depending on amount of text, maybe make versions of 2 and 3 for different texts?
 float fontSize2 = songDetailsDivHeight;//get rid of?
 float fontSize3 = quitHeight; //Change these to match your own prefered DIV names
 PFont font; //Font Variable Name, able to have more than one Font
@@ -127,6 +128,34 @@ while ( textWidth(title) > songTitleDivWidth ) {
   textFont(font, fontSize3);
 }
 text(exit, quitX, quitY, quitWidth, quitHeight );
-fill(resetInk);
 //
-//IMPORTANT: something went wrong and the text from the large box has disapeared and the text for the quit box seems extremely large and doesn't fit
+textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+iWhile=0;
+while ( textWidth(title) > artistNameDivWidth ) {
+  //println("While #2"); //INFINITE Loop Of Doom And Despair
+  iWhile++;
+  if ( iWhile>10000 ) { //>1000 means -1 text or i
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize2 *= constantDecrease;
+  textFont(font, fontSize1);
+}
+text( artistName, artistNameDivX, artistNameDivY, artistNameDivWidth, artistNameDivHeight );
+//
+textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+iWhile=0;
+while ( textWidth(title) > artistDetailsDivWidth ) {
+  //println("While #2"); //INFINITE Loop Of Doom And Despair
+  iWhile++;
+  if ( iWhile>10000 ) { //>1000 means -1 text or i
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize2 *= constantDecrease;
+  textFont(font, fontSize1);
+}
+text( artistDetails, artistDetailsDivX, artistDetailsDivY, artistDetailsDivWidth, artistNameDivHeight );
+//
+fill(resetInk);//Keep this at the very bottom of all of the whiles
+//
