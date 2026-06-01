@@ -1,3 +1,4 @@
+//IMPORTANT NOTE: Music is yet to be chosen and added?
 /* Library Notes
  - File / Sketch / Import Library / Manage Libraries
  - We use Minim for Sound and Sound Effects
@@ -42,8 +43,8 @@ minim = new Minim(this); //Manditory
 String upArrow = "..";
 String open = "/";
 String musicFolder = "Music";
-String soundEffectsFolder = "Sound Effects"
-String dependenciesFoler = "Dependencies";
+String soundEffectsFolder = "Sound Effects";
+String dependenciesFolder = "Dependencies";
 String songName1 = "";
 String soundEffect1 = "computer-mouse-click";
 String fileExtension_mp3 = ".mp3";
@@ -67,5 +68,6 @@ if ( playList[currentSong]==null || soundEffects[currentSong]==null ) { //ERROR,
    */
 } else {
   playList[currentSong].play();
-  printArray();
+  printArray(playList);
 playList[currentSong].play();
+}
