@@ -62,12 +62,14 @@ void setup() {
   //Images and Aspect Ratio Algorithm, including WHILE Loop
   //image();
   //
+  //Find and clean up unneeded DIVs
+  //
   rect( DivX, DivY, DivWidth, DivHeight );
-  rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); //song title //Copy and Paste, rename variables
-  rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); // song details (release date?)
+  //rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); //song title //Copy and Paste, rename variables
+  //rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV+90, DivWidth = paperWidth/NoBH*6, DivHeight = paperHeight/NoBV ); // song details (release date?)
   rect( DivX = paperWidth/NoBH, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*2, DivHeight = paperHeight/NoBV*2 ); // artist pfp
-  rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // artist desc
-  rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*3+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // more artist desc?
+  //rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*2+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // artist desc
+  //rect( DivX = paperWidth/NoBH*3, DivY = paperHeight/NoBV*3+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV ); // more artist desc?
   rect( DivX = paperWidth/NoBH*8, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV*4 ); // song image
   // the buttons (figure out which are which)
   rect( DivX = paperWidth/NoBH, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #1
@@ -82,9 +84,9 @@ void setup() {
   rect( DivX = paperWidth/NoBH*10, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #10
   rect( DivX = paperWidth/NoBH*11, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #11
   // the small buttons at the top corners?
-  rect ( DivX = 1870, DivY = 0, DivWidth = 50, DivHeight = 50);//X button/exit button
+  //rect ( DivX = 1870, DivY = 0, DivWidth = 50, DivHeight = 50);//X button/exit button
   // progress bar
-  rect ( DivX = paperWidth/NoBH, DivY = 980, DivWidth = paperWidth/NoBH*11, DivHeight = 15);
+  rect ( DivX = paperWidth/NoBH, DivY = 980, DivWidth = paperWidth/NoBH*11, DivHeight = 15);//progress bar?
   // times at ends of progress bar
   rect ( DivX = 27.69, DivY = 952, DivWidth = 110, DivHeight = 70); //left box
   rect ( DivX = 1782.28, DivY = 952, DivWidth = 110, DivHeight = 70); //right box

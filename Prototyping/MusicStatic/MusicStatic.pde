@@ -45,7 +45,7 @@ String open = "/";
 String musicFolder = "Music";
 String soundEffectsFolder = "Sound Effects";
 String dependenciesFolder = "Dependencies";
-String songName1 = "";
+String songName1 = ""; //Have yet to decide
 String soundEffect1 = "computer-mouse-click";
 String fileExtension_mp3 = ".mp3";
 //
