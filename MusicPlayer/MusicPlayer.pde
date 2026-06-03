@@ -73,12 +73,17 @@ void setup() {
   rect( DivX = paperWidth/NoBH*8, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV*4 ); // song image
   // the buttons (figure out which are which)
   rect( DivX = paperWidth/NoBH, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #1
+   square(172.5, 798, 100);//Add shapes here, under each button 
   rect( DivX = paperWidth/NoBH*2, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #2
   rect( DivX = paperWidth/NoBH*3, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #3
   rect( DivX = paperWidth/NoBH*4, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #4
   rect( DivX = paperWidth/NoBH*5, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #5
+   rect(825, 810, 20, 80);
+   rect(780, 810, 20, 80);
   rect( DivX = paperWidth/NoBH*6, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #6
+   triangle(925, 810, 925, 890, 1000, 850);
   rect( DivX = paperWidth/NoBH*7, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #7
+   square(1085, 825, 50);
   rect( DivX = paperWidth/NoBH*8, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #8
   rect( DivX = paperWidth/NoBH*9, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #9
   rect( DivX = paperWidth/NoBH*10, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #10
