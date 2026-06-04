@@ -73,17 +73,17 @@ void setup() {
   rect( DivX = paperWidth/NoBH*8, DivY = paperHeight/NoBV*0+90, DivWidth = paperWidth/NoBH*4, DivHeight = paperHeight/NoBV*4 ); // song image
   // the buttons (figure out which are which)
   rect( DivX = paperWidth/NoBH, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #1
-   square(172.5, 798, 100);//Add shapes here, under each button 
+  square(172.5, 798, 100);//Add shapes here, under each button
   rect( DivX = paperWidth/NoBH*2, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #2
   rect( DivX = paperWidth/NoBH*3, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #3
   rect( DivX = paperWidth/NoBH*4, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #4
   rect( DivX = paperWidth/NoBH*5, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #5
-   rect(825, 810, 20, 80);
-   rect(780, 810, 20, 80);
+  rect(825, 810, 20, 80);
+  rect(780, 810, 20, 80);
   rect( DivX = paperWidth/NoBH*6, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #6
-   triangle(925, 810, 925, 890, 1000, 850);
+  triangle(925, 810, 925, 890, 1000, 850);
   rect( DivX = paperWidth/NoBH*7, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #7
-   square(1085, 825, 50);
+  square(1085, 825, 50);
   rect( DivX = paperWidth/NoBH*8, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #8
   rect( DivX = paperWidth/NoBH*9, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #9
   rect( DivX = paperWidth/NoBH*10, DivY = 773.45, DivWidth = paperWidth/NoBH, DivHeight = paperHeight/NoBV ); // button #10
@@ -99,7 +99,7 @@ void setup() {
   //
   //Inserting text program here seemed to work with some adjustments
   //
-   //IMPORTANT: DIVs may not be needed in here since they are already in the MusicPlayer program OR vice versa
+  //IMPORTANT: DIVs may not be needed in here since they are already in the MusicPlayer program OR vice versa
   //Clean up "While" areas
   /* Text Simple | Hardcoded
    */
@@ -319,6 +319,74 @@ void setup() {
   image(image1, imageDivX, imageDivY, imageWidthAdjusted1, imageDivHeight);
   image(image2, image2DivX, image2DivY, image2DivWidth, image2DivHeight);
   //image(image3, 0, 0);
+  //
+  //Global Variables
+  //IMPORTANT NOTE: Music is yet to be chosen and added?
+/* Library Notes
+ - File / Sketch / Import Library / Manage Libraries
+ - We use Minim for Sound and Sound Effects
+ - Able to Google-search libraries to make your project easier
+ - Documentation: https://code.compartmental.net/minim/
+ - Specific Class: https://code.compartmental.net/minim/audioplayer_class_audioplayer.html
+ - Specific Class: https://code.compartmental.net/minim/audiometadata_class_audiometadata.html
+ 
+ ** You are now able to research any Processing-Java Library ... or Any Java Library from the internet **
+ - Processing-Java Libraries must be installed into the IDE
+ - Java Libraries simply require the 'import' declaration
+ 
+ - Note: Hard Drive Registery or address
+ 
+ - Library will not execute since not using full compiler
+ 
+ */
+  Minim minim;  //initates entire class
+  int numberOfSongs = 1; //Best Practcie
+  int numberOfSoundEffect = 1;
+  AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+  AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffect ];
+  int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+  //
+  //Display
+  /*size( 700, 500 ); //width //height
+   //fullScreen();  //displayWidth //displayHeight
+   int appWidth = width; //Best Practice
+   int appHeight = height;
+   */
+  //
+  //Music Loading - STRUCTURED Review
+  minim = new Minim(this); //Manditory
+  /*String upArrow = "..";
+   String open = "/"; */
+  String musicFolder = "Music";
+  String soundEffectsFolder = "Sound Effects";
+  String dependenciesFolder = "Dependencies";
+  String songName1 = ""; //Have yet to decide
+  String soundEffect1 = "computer-mouse-click";
+  String fileExtension_mp3 = ".mp3";
+  //
+  //
+  String musicDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open ;
+  String soundEffectsDirectory = upArrow = open + upArrow + open + dependenciesFolder + open + soundEffectsFolder + open ;
+  String file = musicDirectory + soundEffect1 + fileExtension_mp3;
+  playList[ currentSong ] = minim.loadFile( file );
+  file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
+  soundEffects[currentSong] = minim.loadFile( file );
+  //
+  if ( playList[currentSong]==null || soundEffects[currentSong]==null ) { //ERROR, playlist is NULL
+    //see file or minim.loadFile
+    println("The playlist or sound effects did not load properly");
+    printArray(playList);
+    printArray(soundEffects);
+    /*
+  println("Music Pathway", musicDirectory);
+     printlna("Full Music File Pathway", file);
+     */
+  } else {
+    playList[currentSong].play();
+    printArray(playList);
+    playList[currentSong].play();
+  }
+  //
 }//End Setup
 //
 void draw() {
