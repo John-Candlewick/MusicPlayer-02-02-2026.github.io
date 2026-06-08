@@ -399,3 +399,52 @@ void keyPressed() {
 }//End Key Pressed
 //
 //End MAIN Program
+//
+//AI implemented code bellow
+//
+import ddf.minim.*; // Import the Minim library
+
+Minim minim;
+AudioPlayer player;
+
+void setup() {
+  size(1920, 1080); // Set the canvas size
+  minim = new Minim(this);
+  player = minim.loadFile("your-audio-file.mp3"); // Replace with your audio file
+  player.play();
+}
+
+void draw() {
+  background(255); // Clear the background
+
+  // Progress bar
+  float DivX = width / 10.0;
+  float DivY = 980;
+  float DivWidth = width / 10.0 * 11;
+  float DivHeight = 15;
+  rect(DivX, DivY, DivWidth, DivHeight);
+
+  // Left box for current time
+  rect(27.69, 952, 110, 70);
+  fill(0);
+  textSize(20);
+  text(formatTime(player.position()), 40, 990); // Display current time
+
+  // Right box for total duration
+  rect(1782.28, 952, 110, 70);
+  text(formatTime(player.length()), 1795, 990); // Display total duration
+}
+
+// Helper function to format time in mm:ss
+String formatTime(int millis) {
+  int seconds = millis / 1000;
+  int minutes = seconds / 60;
+  seconds %= 60;
+  return nf(minutes, 2) + ":" + nf(seconds, 2);
+}
+
+void stop() {
+  player.close();
+  minim.stop();
+  super.stop();
+ }
