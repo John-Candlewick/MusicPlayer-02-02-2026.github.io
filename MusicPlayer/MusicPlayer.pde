@@ -360,8 +360,8 @@ void setup() {
   String musicFolder = "Music";
   String soundEffectsFolder = "Sound Effects";
   String dependenciesFolder = "Dependencies";
-  String songName1 = ""; //Have yet to decide
-  String soundEffect1 = "computer-mouse-click";
+  String songName1 = "duran-duran-invisible"; //Have yet to decide
+  String soundEffect1 = "computer-mouse-click.mp3";
   String fileExtension_mp3 = ".mp3";
   //
   //
@@ -386,11 +386,15 @@ void setup() {
     printArray(playList);
     playList[currentSong].play();
   }
+  size(1920, 1080); // Set the canvas size
+  minim = new Minim(this);
+  player = minim.loadFile("duran-duran-invisible.mp3"); // Replace with your audio file
+  player.play();
   //
 }//End Setup
 //
-void draw() {
-}//End Draw
+//void draw() {
+//}//End Draw
 //
 void mousePressed() {
 }//End Mouse Presssed
@@ -407,13 +411,13 @@ import ddf.minim.*; // Import the Minim library
 Minim minim;
 AudioPlayer player;
 
-void setup() {
+/*void setup() {
   size(1920, 1080); // Set the canvas size
   minim = new Minim(this);
   player = minim.loadFile("your-audio-file.mp3"); // Replace with your audio file
   player.play();
 }
-
+*/
 void draw() {
   background(255); // Clear the background
 
