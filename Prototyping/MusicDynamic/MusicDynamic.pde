@@ -50,10 +50,10 @@ void setup() {
   int numbrOfButtons = 13;
   int widthOfButton = appWidth/numberOfButtons;
   int beginningButtonSpace = widthOfButton;
-  float 
-  float
-  float
-  float
+  //float 
+  //float
+  //float
+  //float
   //
   //DIV: rect()
   //
@@ -122,8 +122,8 @@ void setup() {
   fontSize2 = messageDIV_Height; // change this to YOUR DIVs
   fontSize3 = quitHeight; // change this to YOUR DIVs
   //PFont font; //Font Variable Name, able to have more than one font
-  String 
-}//End Setup
+  String }//End Setup
+  
 //
 void draw() {
   playList[currentSong].play();
