@@ -322,23 +322,23 @@ void setup() {
   //
   //Global Variables
   //IMPORTANT NOTE: Music is yet to be chosen and added?
-/* Library Notes
- - File / Sketch / Import Library / Manage Libraries
- - We use Minim for Sound and Sound Effects
- - Able to Google-search libraries to make your project easier
- - Documentation: https://code.compartmental.net/minim/
- - Specific Class: https://code.compartmental.net/minim/audioplayer_class_audioplayer.html
- - Specific Class: https://code.compartmental.net/minim/audiometadata_class_audiometadata.html
- 
- ** You are now able to research any Processing-Java Library ... or Any Java Library from the internet **
- - Processing-Java Libraries must be installed into the IDE
- - Java Libraries simply require the 'import' declaration
- 
- - Note: Hard Drive Registery or address
- 
- - Library will not execute since not using full compiler
- 
- */
+  /* Library Notes
+   - File / Sketch / Import Library / Manage Libraries
+   - We use Minim for Sound and Sound Effects
+   - Able to Google-search libraries to make your project easier
+   - Documentation: https://code.compartmental.net/minim/
+   - Specific Class: https://code.compartmental.net/minim/audioplayer_class_audioplayer.html
+   - Specific Class: https://code.compartmental.net/minim/audiometadata_class_audiometadata.html
+   
+   ** You are now able to research any Processing-Java Library ... or Any Java Library from the internet **
+   - Processing-Java Libraries must be installed into the IDE
+   - Java Libraries simply require the 'import' declaration
+   
+   - Note: Hard Drive Registery or address
+   
+   - Library will not execute since not using full compiler
+   
+   */
   Minim minim;  //initates entire class
   int numberOfSongs = 1; //Best Practcie
   int numberOfSoundEffect = 1;
@@ -412,12 +412,12 @@ Minim minim;
 AudioPlayer player;
 
 /*void setup() {
-  size(1920, 1080); // Set the canvas size
-  minim = new Minim(this);
-  player = minim.loadFile("your-audio-file.mp3"); // Replace with your audio file
-  player.play();
-}
-*/
+ size(1920, 1080); // Set the canvas size
+ minim = new Minim(this);
+ player = minim.loadFile("your-audio-file.mp3"); // Replace with your audio file
+ player.play();
+ }
+ */
 void draw() {
   background(255); // Clear the background
 
@@ -432,23 +432,29 @@ void draw() {
   rect(27.69, 952, 110, 70);
   fill(0);
   textSize(20);
-  text(formatTime(player.position()), 40, 990); // Display current time
-
+  if (player != null) {
+    text(formatTime(player.position()), 40, 990); // Display current time
+  }
   // Right box for total duration
   rect(1782.28, 952, 110, 70);
-  text(formatTime(player.length()), 1795, 990); // Display total duration
-}
+  if (player != null) {
+    text(formatTime(player.length()), 1795, 990); // Display total duration
+  }
 
-// Helper function to format time in mm:ss
-String formatTime(int millis) {
-  int seconds = millis / 1000;
-  int minutes = seconds / 60;
-  seconds %= 60;
-  return nf(minutes, 2) + ":" + nf(seconds, 2);
-}
+  // Helper function to format time in mm:ss
+  String formatTime(int millis) {
+    int seconds = millis / 1000;
+    int minutes = seconds / 60;
+    seconds %= 60;
+    return nf(minutes, 2) + ":" + nf(seconds, 2);
+  }
 
-void stop() {
-  player.close();
-  minim.stop();
-  super.stop();
- }
+  void stop() {
+    if (player != null) {
+      player.close();
+    }
+    if (minim != null) {
+      minim.stop();
+    }
+    super.stop();
+  }
