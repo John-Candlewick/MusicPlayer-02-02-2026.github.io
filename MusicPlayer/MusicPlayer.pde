@@ -429,27 +429,37 @@ void draw() {
   rect(DivX, DivY, DivWidth, DivHeight);
 
  // Left box for current time
-rect(27.69, 952, 110, 70);
-fill(0);
-textSize(20);
-if (player != null) {
-  fill(255); // Set text color to white for visibility
-  text(formatTime(player.position()), 40, 990); // Display current time
-}
-// Right box for total duration
-rect(1782.28, 952, 110, 70);
-if (player != null) {
-  fill(255); // Set text color to white for visibility
-  text(formatTime(player.length()), 1795, 990); // Display total duration
+  fill(255); // Set fill color for the rectangle
+  rect(27.69, 952, 110, 70);
+  fill(0);
+  textSize(20);
+  if (player != null) {
+    fill(255); // Set text color to white for visibility
+    text(formatTime(player.position()), 40, 990); // Display current time
+  } else {
+    fill(255); // Set text color to white for visibility
+    text("00:00", 40, 990); // Display default time if player is null
+  }
+  
+  // Right box for total duration
+  fill(255); // Set fill color for the rectangle
+  rect(1782.28, 952, 110, 70);
+  if (player != null) {
+    fill(255); // Set text color to white for visibility
+    text(formatTime(player.length()), 1795, 990); // Display total duration
+  } else {
+    fill(255); // Set text color to white for visibility
+    text("00:00", 1795, 990); // Display default duration if player is null
+  }
 }
 
-// Helper function to format time in mm:ss
-String formatTime(int millis) {
-  int seconds = millis / 1000;
-  int minutes = seconds / 60;
-  seconds %= 60;
-  return nf(minutes, 2) + ":" + nf(seconds, 2);
-}
+  // Helper function to format time in mm:ss
+  String formatTime(int millis) {
+    int seconds = millis / 1000;
+    int minutes = seconds / 60;
+    seconds %= 60;
+    return nf(minutes, 2) + ":" + nf(seconds, 2);
+  }
 
   void stop() {
     if (player != null) {
