@@ -433,11 +433,13 @@ void draw() {
   fill(0);
   textSize(20);
   if (player != null) {
+    fill(255); // Set text color to white for visibility
     text(formatTime(player.position()), 40, 990); // Display current time
   }
   // Right box for total duration
   rect(1782.28, 952, 110, 70);
   if (player != null) {
+    fill(255); // Set text color to white for visibility
     text(formatTime(player.length()), 1795, 990); // Display total duration
   }
 
